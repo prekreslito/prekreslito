@@ -1,4 +1,48 @@
-export default function poptavka() {
+"use client";
+
+import { useState } from "react";
+
+export default function Poptavka() {
+  const [loading, setLoading] = useState(false);
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    projectType: "",
+    message: "",
+  });
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    setLoading(true);
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
+
+    setLoading(false);
+
+    if (res.ok) {
+      alert("Poptávka byla úspěšně odeslána.");
+
+      setForm({
+        name: "",
+        email: "",
+        phone: "",
+        projectType: "",
+        message: "",
+      });
+    } else {
+      alert("Něco se pokazilo.");
+    }
+  }
+
   return (
     <section
       id="poptavka"
@@ -6,9 +50,9 @@ export default function poptavka() {
     >
       <div className="text-center">
 
-      <span className="text-cyan-400 uppercase tracking-[4px]">
-      Poptávka
-      </span>
+        <span className="text-cyan-400 uppercase tracking-[4px]">
+          Poptávka
+        </span>
 
         <h2 className="mt-6 text-5xl lg:text-6xl font-black">
           Nezávazná poptávka
@@ -20,145 +64,101 @@ export default function poptavka() {
 
       </div>
 
-      {/* Výhody */}
-
       <div className="mt-14 mx-auto max-w-2xl rounded-[32px] border border-cyan-500/20 bg-cyan-500/10 backdrop-blur-xl p-8 shadow-xl">
 
         <div className="flex justify-center items-center gap-20">
 
           <div className="text-center">
-
-            <div className="text-5xl">
-              💰
-            </div>
-
+            <div className="text-5xl">💰</div>
             <h3 className="mt-4 text-lg font-bold">
               Cenová nabídka zdarma
             </h3>
-
           </div>
 
           <div className="text-center">
-
-            <div className="text-5xl">
-              ✅
-            </div>
-
+            <div className="text-5xl">✅</div>
             <h3 className="mt-4 text-lg font-bold">
               Neplatíte předem
             </h3>
-
           </div>
 
         </div>
 
       </div>
 
-      {/* Formulář */}
+      <form
+        onSubmit={handleSubmit}
+        className="mt-16 mx-auto max-w-4xl space-y-6"
+      >
 
-      <form className="mt-16 mx-auto max-w-4xl space-y-6">
-              <input
+        <input
           type="text"
           placeholder="Jméno *"
-          className="w-full rounded-2xl border border-white/10 bg-white/5 px-6 py-5 text-lg text-white placeholder:text-slate-500 outline-none transition focus:border-cyan-400"
           required
+          value={form.name}
+          onChange={(e) =>
+            setForm({ ...form, name: e.target.value })
+          }
+          className="w-full rounded-2xl border border-white/10 bg-white/5 px-6 py-5 text-lg"
         />
 
         <input
           type="email"
           placeholder="E-mail *"
-          className="w-full rounded-2xl border border-white/10 bg-white/5 px-6 py-5 text-lg text-white placeholder:text-slate-500 outline-none transition focus:border-cyan-400"
           required
+          value={form.email}
+          onChange={(e) =>
+            setForm({ ...form, email: e.target.value })
+          }
+          className="w-full rounded-2xl border border-white/10 bg-white/5 px-6 py-5 text-lg"
         />
 
         <input
           type="tel"
-          placeholder="Telefon (volitelné)"
-          className="w-full rounded-2xl border border-white/10 bg-white/5 px-6 py-5 text-lg text-white placeholder:text-slate-500 outline-none transition focus:border-cyan-400"
+          placeholder="Telefon"
+          value={form.phone}
+          onChange={(e) =>
+            setForm({ ...form, phone: e.target.value })
+          }
+          className="w-full rounded-2xl border border-white/10 bg-white/5 px-6 py-5 text-lg"
         />
 
         <select
-          defaultValue=""
-          className="w-full rounded-2xl border border-white/10 bg-[#111827] px-6 py-5 text-lg text-white outline-none transition focus:border-cyan-400"
           required
+          value={form.projectType}
+          onChange={(e) =>
+            setForm({
+              ...form,
+              projectType: e.target.value,
+            })
+          }
+          className="w-full rounded-2xl border border-white/10 bg-[#111827] px-6 py-5 text-lg"
         >
-          <option value="" disabled>
-            Vyberte typ projektu
-          </option>
-
-          <option value="Rodinný dům">
-            Rodinný dům
-          </option>
-
-          <option value="Chata">
-            Chata
-          </option>
-
-          <option value="Garáž">
-            Garáž
-          </option>
-
-          <option value="Jiný projekt">
-            Jiný projekt
-          </option>
+          <option value="">Vyberte typ projektu</option>
+          <option>Rodinný dům</option>
+          <option>Chata</option>
+          <option>Garáž</option>
+          <option>Jiný projekt</option>
         </select>
-                {/* Nahrání souboru */}
-
-        <label className="block cursor-pointer rounded-3xl border-2 border-dashed border-cyan-500/30 bg-white/5 p-10 text-center transition hover:border-cyan-400 hover:bg-cyan-500/10">
-
-          <div className="text-6xl">
-            📄
-          </div>
-
-          <h3 className="mt-6 text-2xl font-bold">
-            Nahrajte projekt
-          </h3>
-
-          <p className="mt-4 text-slate-400">
-            Klikněte sem nebo přetáhněte soubor.
-          </p>
-
-          <p className="mt-2 text-sm text-slate-500">
-            PDF • DWG • JPG • PNG
-          </p>
-
-          <input
-            type="file"
-            className="hidden"
-            accept=".pdf,.dwg,.jpg,.jpeg,.png"
-          />
-
-        </label>
 
         <textarea
           rows={6}
-          placeholder="Stručně popište, co potřebujete překreslit..."
-          className="w-full rounded-2xl border border-white/10 bg-white/5 px-6 py-5 text-lg text-white placeholder:text-slate-500 outline-none transition focus:border-cyan-400 resize-none"
-        ></textarea>
-
-        <label className="flex items-start gap-3">
-
-          <input
-            type="checkbox"
-            required
-            className="mt-1 accent-cyan-500"
-          />
-
-          <span className="text-slate-400 leading-7">
-            Souhlasím se zpracováním osobních údajů za účelem vyřízení poptávky.
-          </span>
-
-        </label>
+          placeholder="Popis projektu"
+          value={form.message}
+          onChange={(e) =>
+            setForm({ ...form, message: e.target.value })
+          }
+          className="w-full rounded-2xl border border-white/10 bg-white/5 px-6 py-5 text-lg"
+        />
 
         <button
-          type="submit"
-          className="w-full rounded-2xl bg-cyan-500 py-5 text-xl font-bold transition duration-300 hover:bg-cyan-400 hover:scale-[1.02]"
+          disabled={loading}
+          className="w-full rounded-2xl bg-cyan-500 py-5 text-xl font-bold hover:bg-cyan-400"
         >
-          Odeslat nezávaznou poptávku
+          {loading ? "Odesílám..." : "Odeslat nezávaznou poptávku"}
         </button>
 
       </form>
-
     </section>
   );
 }
