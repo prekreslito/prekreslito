@@ -1,0 +1,10 @@
+{
+  "name": "Překreslito.cz",
+  "short_name": "Překreslito",
+  "description": "Překreslování projektové dokumentace rodinných domů.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050816",
+  "theme_color": "#06b6d4",
+  "lang": "cs"
+}

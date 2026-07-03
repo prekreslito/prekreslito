@@ -2,21 +2,21 @@ export default function Gallery() {
   return (
     <section
       id="galerie"
-      className="max-w-7xl mx-auto px-8 py-32"
+      className="mx-auto max-w-7xl px-6 py-20 sm:px-8 md:py-24 lg:py-32"
     >
       <div className="text-center">
 
-        <span className="text-cyan-400 uppercase tracking-[4px]">
+        <span className="text-sm uppercase tracking-[4px] text-cyan-400 sm:text-base">
           Portfolio
         </span>
 
-        <h2 className="mt-6 text-5xl lg:text-6xl font-black">
+        <h2 className="mt-5 text-4xl font-black sm:text-5xl lg:text-6xl">
           Ukázky mé práce
         </h2>
 
-        <p className="mt-6 text-xl text-slate-400 max-w-3xl mx-auto leading-9">
+        <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-400 sm:text-xl sm:leading-9">
           Momentálně svou službu teprve spouštíme, proto zde zatím nenajdete
-          zakázky od klientů. Místo toho zde prezentuji své  výherní 
+          zakázky od klientů. Místo toho zde prezentuji své výherní
           soutěžní projekty, které ukazují kvalitu mé práce a způsob
           zpracování projektové dokumentace. Portfolio budu postupně
           rozšiřovat o dokončené zakázky.
@@ -24,47 +24,56 @@ export default function Gallery() {
 
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-10 mt-20">
+      <div className="mt-14 grid gap-8 md:grid-cols-2 lg:mt-20 lg:gap-10">
 
         {/* Vizualizace */}
-        <div className="overflow-hidden rounded-[36px] border border-white/10 bg-white/5 backdrop-blur-xl hover:scale-[1.02] duration-300">
 
-          <img
-            src="/images/vizualizace.jpg"
-            alt="Vizualizace rodinného domu"
-            className="w-full h-[420px] object-cover"
-          />
+        <div className="group overflow-hidden rounded-[36px] border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500 hover:shadow-[0_0_35px_rgba(6,182,212,0.18)]">
 
-          <div className="p-10">
+          <div className="overflow-hidden">
 
-            <h3 className="text-3xl font-black">
+            <img
+              src="/images/vizualizace.jpg"
+              alt="Vizualizace rodinného domu"
+              className="h-64 w-full object-cover transition duration-500 group-hover:scale-110 sm:h-80 lg:h-[420px]"
+            />
+
+          </div>
+
+          <div className="p-8 sm:p-10">
+
+            <h3 className="text-2xl font-black sm:text-3xl">
               Vizualizace domu
             </h3>
 
-            <p className="mt-5 text-slate-400 leading-8">
+            <p className="mt-5 leading-8 text-slate-400">
               Fotorealistická vizualizace soutěžního projektu rodinného domu.
             </p>
 
           </div>
 
         </div>
+                {/* Půdorys */}
 
-        {/* Půdorys */}
-        <div className="overflow-hidden rounded-[36px] border border-white/10 bg-white/5 backdrop-blur-xl hover:scale-[1.02] duration-300">
+        <div className="group overflow-hidden rounded-[36px] border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500 hover:shadow-[0_0_35px_rgba(6,182,212,0.18)]">
 
-          <img
-            src="/images/pudorys 1.np.jpg"
-            alt="Půdorys 1. NP"
-            className="w-full h-[420px] object-cover"
-          />
+          <div className="overflow-hidden">
 
-          <div className="p-10">
+            <img
+              src="/images/pudorys 1.np.jpg"
+              alt="Půdorys 1. NP"
+              className="h-64 w-full object-cover transition duration-500 group-hover:scale-110 sm:h-80 lg:h-[420px]"
+            />
 
-            <h3 className="text-3xl font-black">
+          </div>
+
+          <div className="p-8 sm:p-10">
+
+            <h3 className="text-2xl font-black sm:text-3xl">
               Půdorys 1. NP
             </h3>
 
-            <p className="mt-5 text-slate-400 leading-8">
+            <p className="mt-5 leading-8 text-slate-400">
               Přesně zpracovaný půdorys rodinného domu vytvořený v AutoCADu.
             </p>
 
@@ -73,21 +82,26 @@ export default function Gallery() {
         </div>
 
         {/* Řez */}
-        <div className="overflow-hidden rounded-[36px] border border-white/10 bg-white/5 backdrop-blur-xl hover:scale-[1.02] duration-300">
 
-          <img
-            src="/images/řez a-a.jpg"
-            alt="Řez stavbou"
-            className="w-full h-[420px] object-cover"
-          />
+        <div className="group overflow-hidden rounded-[36px] border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500 hover:shadow-[0_0_35px_rgba(6,182,212,0.18)]">
 
-          <div className="p-10">
+          <div className="overflow-hidden">
 
-            <h3 className="text-3xl font-black">
+            <img
+              src="/images/řez a-a.jpg"
+              alt="Řez stavbou"
+              className="h-64 w-full object-cover transition duration-500 group-hover:scale-110 sm:h-80 lg:h-[420px]"
+            />
+
+          </div>
+
+          <div className="p-8 sm:p-10">
+
+            <h3 className="text-2xl font-black sm:text-3xl">
               Řez stavbou
             </h3>
 
-            <p className="mt-5 text-slate-400 leading-8">
+            <p className="mt-5 leading-8 text-slate-400">
               Ukázka konstrukčního řezu s důrazem na přehlednost a přesnost.
             </p>
 
@@ -96,21 +110,26 @@ export default function Gallery() {
         </div>
 
         {/* Detail */}
-        <div className="overflow-hidden rounded-[36px] border border-white/10 bg-white/5 backdrop-blur-xl hover:scale-[1.02] duration-300">
 
-          <img
-            src="/images/detail.png"
-            alt="Stavební detail"
-            className="w-full h-[420px] object-cover"
-          />
+        <div className="group overflow-hidden rounded-[36px] border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500 hover:shadow-[0_0_35px_rgba(6,182,212,0.18)]">
 
-          <div className="p-10">
+          <div className="overflow-hidden">
 
-            <h3 className="text-3xl font-black">
+            <img
+              src="/images/detail.png"
+              alt="Stavební detail"
+              className="h-64 w-full object-cover transition duration-500 group-hover:scale-110 sm:h-80 lg:h-[420px]"
+            />
+
+          </div>
+
+          <div className="p-8 sm:p-10">
+
+            <h3 className="text-2xl font-black sm:text-3xl">
               Stavební detail
             </h3>
 
-            <p className="mt-5 text-slate-400 leading-8">
+            <p className="mt-5 leading-8 text-slate-400">
               Vybraný detail projektové dokumentace zpracovaný v AutoCADu.
             </p>
 
