@@ -1,0 +1,500 @@
+/* =========================================================
+   Překreslito.cz Cookie Consent
+   ČÁST 1/3
+========================================================= */
+
+:root {
+
+  --cc-font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+
+  --cc-bg: rgba(5,8,22,.94);
+
+  --cc-primary-color: #ffffff;
+
+  --cc-secondary-color: #cbd5e1;
+
+  --cc-btn-primary-bg: #06b6d4;
+
+  --cc-btn-primary-hover-bg: #0891b2;
+
+  --cc-btn-primary-color: #ffffff;
+
+  --cc-btn-secondary-bg: rgba(255,255,255,.05);
+
+  --cc-btn-secondary-hover-bg: rgba(255,255,255,.10);
+
+  --cc-btn-secondary-color: #ffffff;
+
+  --cc-border-radius: 22px;
+
+  --cc-toggle-on-bg: #06b6d4;
+
+}
+
+/* =========================================================
+   Pozadí
+========================================================= */
+
+.cm,
+.pm{
+
+    backdrop-filter:blur(22px);
+
+    -webkit-backdrop-filter:blur(22px);
+
+}
+
+/* =========================================================
+   Okno
+========================================================= */
+
+.cm__body,
+.pm__body{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:rgba(11,17,32,.96)!important;
+
+    border:1px solid rgba(255,255,255,.08)!important;
+
+    border-radius:28px!important;
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.05);
+
+}
+
+/* horní světelný efekt */
+
+.cm__body::before,
+.pm__body::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    border-radius:inherit;
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(255,255,255,.05),
+        transparent 18%
+    );
+
+}
+
+/* =========================================================
+   Hlavička
+========================================================= */
+
+.cm__header,
+.pm__header{
+
+    padding-bottom:18px;
+
+    margin-bottom:22px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.cm__title,
+.pm__title{
+
+    color:#fff!important;
+
+    font-size:34px!important;
+
+    font-weight:800!important;
+
+    line-height:1.2;
+
+}
+
+.cm__desc,
+.pm__section-desc{
+
+    color:#cbd5e1!important;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+
+/* =========================================================
+   Zavírací tlačítko
+========================================================= */
+
+.pm__close-btn{
+
+    border-radius:12px;
+
+    transition:.25s;
+
+}
+
+.pm__close-btn:hover{
+
+    transform:rotate(90deg);
+
+    background:rgba(255,255,255,.08);
+
+}
+
+/* =========================================================
+   Nadpisy sekcí
+========================================================= */
+
+.pm__section-title{
+
+    color:white!important;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+/* =========================================================
+   Sekce - kompletně nový vzhled
+========================================================= */
+
+.pm__section{
+
+    background:#151b2d!important;
+
+    border:1px solid rgba(255,255,255,.08)!important;
+
+    border-radius:18px!important;
+
+    padding:22px!important;
+
+    margin-bottom:18px!important;
+
+    transition:.25s ease;
+
+}
+
+.pm__section:hover{
+
+    border-color:rgba(34,211,238,.45)!important;
+
+    box-shadow:0 0 0 1px rgba(34,211,238,.15);
+
+}
+
+.pm__section-title{
+
+    color:#ffffff!important;
+
+    font-size:20px!important;
+
+    font-weight:700!important;
+
+    margin-bottom:10px!important;
+
+}
+
+.pm__section-desc{
+
+    color:#cbd5e1!important;
+
+    font-size:15px!important;
+
+    line-height:1.8!important;
+
+}
+
+/* =========================================================
+   Přepínače
+========================================================= */
+
+.pm__toggle{
+
+    transform:scale(1.15);
+
+    transition:.25s ease;
+
+}
+
+.pm__toggle:hover{
+
+    transform:scale(1.22);
+
+}
+
+.pm__toggle:checked{
+
+    accent-color:#06b6d4;
+
+}
+
+/* =========================================================
+   Tlačítka
+========================================================= */
+
+.cm__btn,
+.pm__btn{
+
+    border-radius:14px!important;
+
+    font-weight:700!important;
+
+    padding:14px 22px!important;
+
+    transition:.25s ease!important;
+
+}
+
+.cm__btn--primary,
+.pm__btn--primary{
+
+    background:linear-gradient(
+        135deg,
+        #06b6d4,
+        #0891b2
+    )!important;
+
+    color:white!important;
+
+    border:none!important;
+
+}
+
+.cm__btn--primary:hover,
+.pm__btn--primary:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 12px 28px rgba(6,182,212,.35);
+
+}
+
+.cm__btn--secondary,
+.pm__btn--secondary{
+
+    background:rgba(255,255,255,.06)!important;
+
+    color:white!important;
+
+    border:1px solid rgba(255,255,255,.08)!important;
+
+}
+
+.cm__btn--secondary:hover,
+.pm__btn--secondary:hover{
+
+    background:rgba(255,255,255,.12)!important;
+
+}
+
+/* =========================================================
+   Odkazy
+========================================================= */
+
+.cc__link,
+.cm__desc a,
+.pm__section-desc a{
+
+    color:#22d3ee!important;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+}
+
+.cc__link:hover,
+.cm__desc a:hover,
+.pm__section-desc a:hover{
+
+    color:#67e8f9!important;
+
+    text-decoration:underline;
+
+}
+/* =========================================================
+   ČÁST 3/3
+   Překreslito.cz - finální úpravy
+========================================================= */
+
+/* Footer */
+
+.cm__footer,
+.pm__footer{
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    padding-top:20px;
+
+}
+
+/* Animace */
+
+.cm,
+.pm{
+
+    animation:ccFade .35s ease;
+
+}
+
+@keyframes ccFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Scrollbar */
+
+.pm__body::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.pm__body::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+.pm__body::-webkit-scrollbar-thumb{
+
+    background:rgba(255,255,255,.18);
+
+    border-radius:20px;
+
+}
+
+.pm__body::-webkit-scrollbar-thumb:hover{
+
+    background:rgba(255,255,255,.28);
+
+}
+
+/* Focus */
+
+.cm__btn:focus-visible,
+.pm__btn:focus-visible{
+
+    outline:2px solid #22d3ee;
+
+    outline-offset:3px;
+
+}
+
+/* Jemné efekty */
+
+.cm__btn,
+.pm__btn,
+.pm__toggle{
+
+    transition:all .25s ease;
+
+}
+
+.cm__btn:active,
+.pm__btn:active{
+
+    transform:scale(.98);
+
+}
+
+/* Mobil */
+
+@media (max-width:768px){
+
+    .cm,
+    .pm{
+
+        padding:16px!important;
+
+    }
+
+    .cm__body,
+    .pm__body{
+
+        width:100%!important;
+
+        max-width:100%!important;
+
+        border-radius:22px!important;
+
+    }
+
+    .cm__title,
+    .pm__title{
+
+        font-size:24px!important;
+
+    }
+
+    .cm__desc,
+    .pm__section-desc{
+
+        font-size:15px!important;
+
+        line-height:1.7!important;
+
+    }
+
+    .cm__btn,
+    .pm__btn{
+
+        width:100%!important;
+
+        justify-content:center;
+
+        padding:15px!important;
+
+    }
+
+    .pm__section{
+
+        padding:18px!important;
+
+    }
+
+}
+
+/* Desktop */
+
+@media (min-width:769px){
+
+    .cm__body{
+
+        max-width:720px!important;
+
+    }
+
+    .pm__body{
+
+        max-width:900px!important;
+
+    }
+
+}
