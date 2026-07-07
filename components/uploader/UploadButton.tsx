@@ -31,7 +31,9 @@ export default function UploadButton({
   const [errorMessage, setErrorMessage] =
     useState("");
 
-  async function uploadFiles(fileList: FileList) {
+  async function uploadFiles(
+    fileList: FileList
+  ) {
     setErrorMessage("");
 
     const selectedFiles = Array.from(fileList);
@@ -91,7 +93,9 @@ export default function UploadButton({
         return;
       }
 
-      const data = JSON.parse(xhr.responseText);
+      const data = JSON.parse(
+        xhr.responseText
+      );
 
       const uploaded: UploadedFile[] =
         data.files.map(
@@ -125,8 +129,7 @@ export default function UploadButton({
         setUploading(false);
       }, 500);
     };
-
-    xhr.onerror = () => {
+        xhr.onerror = () => {
       setUploading(false);
 
       setErrorMessage(
@@ -181,7 +184,8 @@ export default function UploadButton({
       e.dataTransfer.files
     );
   }
-    return (
+
+  return (
     <div className="w-full">
 
       <input
@@ -227,7 +231,7 @@ export default function UploadButton({
           PDF • DWG • DXF • DOC • DOCX • XLS • XLSX • JPG • PNG • WEBP • ZIP • RAR • 7Z
           <br />
           <span className="text-xs">
-            Maximálně 30 souborů • 50 MB na soubor
+            Maximálně 30 souborů • 10 MB na soubor
           </span>
         </p>
       </div>

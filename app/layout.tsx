@@ -25,18 +25,33 @@ export const metadata: Metadata = {
   description:
     "Profesionální překreslování projektové dokumentace rodinných domů do digitální podoby. Převod papírových výkresů a PDF do DWG, PDF a dalších CAD formátů.",
 
-  keywords: [
-    "překreslení projektu",
-    "překreslení výkresů",
-    "AutoCAD",
-    "DWG",
-    "projekt rodinného domu",
-    "digitalizace projektů",
-    "stavební dokumentace",
-    "CAD",
-    "PDF do DWG",
-    "Překreslito",
-  ],
+keywords: [
+  "Překreslito",
+  "Prekreslito",
+  "Překreslito.cz",
+  "Prekreslito.cz",
+
+  "překreslení projektu",
+  "prekreslení projektu",
+  "prekresleni projektu",
+
+  "překreslení výkresů",
+  "prekreslení výkresů",
+  "prekresleni vykresu",
+
+  "digitalizace projektů",
+  "digitalizace projektu",
+
+  "AutoCAD",
+  "DWG",
+  "DXF",
+  "PDF do DWG",
+  "CAD",
+
+  "projekt rodinného domu",
+  "stavební dokumentace",
+  "překreslení rodinného domu",
+],
 
   authors: [
     {
